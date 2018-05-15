@@ -1,6 +1,6 @@
 # Speciale Input - Output
 Team 2
-1. <Koen Sanderse>
+1. Koen Sanderse
 
 
 ## Ontwerp
