@@ -9,15 +9,17 @@ namespace ConcentratieGame
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private Ball _ball = new Ball(100, 100, Color.Red);
+        private BckSpiral _bckSpiral = new BckSpiral(0, 0, 800, 480, Color.White, Background.BackgroundState.Rotate);
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-
+        
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -41,6 +43,8 @@ namespace ConcentratieGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            _ball.Texture = Content.Load<Texture2D>("ball");
+            _bckSpiral.Texture = Content.Load<Texture2D>("bckSpiral");
         }
 
         /// <summary>
@@ -76,6 +80,8 @@ namespace ConcentratieGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _bckSpiral.Draw(spriteBatch);
+            _ball.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }
