@@ -9,15 +9,20 @@ namespace ConcentratieGame
     /// </summary>
     public class Game1 : Game
     {
+        public static Game1 Instance;
+
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private Ball _ball = new Ball(100, 100, Color.Red);
-        private BckSpiral _bckSpiral = new BckSpiral(0, 0, 800, 480, Color.White, Background.BackgroundState.Rotate);
+        private Ball _ball;
+        //private BckSpiral _bckSpiral = new BckSpiral(0, 0, 800, 480, Color.White, Background.BackgroundState.Rotate);
 
         public Game1()
         {
+            Instance = this;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            _ball = new Ball(100, 100, Color.Red, graphics);
         }
         
         /// <summary>
@@ -29,6 +34,7 @@ namespace ConcentratieGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
 
             base.Initialize();
         }
@@ -44,7 +50,7 @@ namespace ConcentratieGame
 
             // TODO: use this.Content to load your game content here
             _ball.Texture = Content.Load<Texture2D>("ball");
-            _bckSpiral.Texture = Content.Load<Texture2D>("bckSpiral");
+            //_bckSpiral.Texture = Content.Load<Texture2D>("bckSpiral");
         }
 
         /// <summary>
@@ -67,6 +73,7 @@ namespace ConcentratieGame
                 Exit();
 
             // TODO: Add your update logic here
+            _ball.Update();
 
             base.Update(gameTime);
         }
@@ -80,7 +87,7 @@ namespace ConcentratieGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            _bckSpiral.Draw(spriteBatch);
+            //_bckSpiral.Draw(spriteBatch);
             _ball.Draw(spriteBatch);
 
             base.Draw(gameTime);

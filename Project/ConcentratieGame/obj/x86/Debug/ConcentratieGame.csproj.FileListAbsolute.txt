@@ -18,10 +18,10 @@ D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\SharpDX.
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.csprojResolveAssemblyReference.cache
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.csproj.CoreCompileInputs.cache
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.csproj.CopyComplete
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.exe
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.pdb
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\Content\ball.xnb
 D:\GitHub\ProjectGamelab\Project\ConcentratieGame\bin\Windows\x86\Debug\Content\bckSpiral.xnb
+D:\GitHub\ProjectGamelab\Project\ConcentratieGame\obj\x86\Debug\ConcentratieGame.csprojAssemblyReference.cache
