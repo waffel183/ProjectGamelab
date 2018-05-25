@@ -11,7 +11,7 @@ namespace ConcentratieGame
     {
         public static Game1 Instance;
 
-        private GraphicsDeviceManager graphics;
+        private readonly GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private Ball _ball;
         //private BckSpiral _bckSpiral = new BckSpiral(0, 0, 800, 480, Color.White, Background.BackgroundState.Rotate);
@@ -21,8 +21,6 @@ namespace ConcentratieGame
             Instance = this;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-
-            _ball = new Ball(100, 100, Color.Red, graphics);
         }
         
         /// <summary>
@@ -34,7 +32,7 @@ namespace ConcentratieGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _ball = new Ball(100, 100, Color.White, graphics);
 
             base.Initialize();
         }
