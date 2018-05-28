@@ -32,7 +32,7 @@ namespace ConcentratieGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _ball = new Ball(100, 100, Color.White, graphics);
+            _ball = new Ball(Color.White, graphics, 10, 0);
 
             base.Initialize();
         }
