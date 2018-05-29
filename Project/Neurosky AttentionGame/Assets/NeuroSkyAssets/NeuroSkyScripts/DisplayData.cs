@@ -14,9 +14,6 @@ public class DisplayData : MonoBehaviour
     private int meditation1;
 	
 	private float delta;
-    private float theta;
-    private float highAlpha;
-    private float lowAlpha;
 
     void Start()
     {
@@ -28,10 +25,7 @@ public class DisplayData : MonoBehaviour
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		
 		controller.UpdateDeltaEvent += OnUpdateDelta;
-        controller.UpdateThetaEvent += OnUpdateTheta;
-        controller.UpdateHighAlphaEvent += OnUpdateHighAlpha;
-        controller.UpdateLowAlphaEvent += OnUpdateLowAlpha;
-
+		
     }
 	
 	void OnUpdatePoorSignal(int value){
@@ -57,18 +51,6 @@ public class DisplayData : MonoBehaviour
 	void OnUpdateDelta(float value){
 		delta = value;
 	}
-    void OnUpdateTheta(float value)
-    {
-        theta = value;
-    }
-    void OnUpdateHighAlpha(float value)
-    {
-        highAlpha = value;
-    }
-    void OnUpdateLowAlpha(float value)
-    {
-        lowAlpha = value;
-    }
 
 
     void OnGUI()
@@ -96,9 +78,6 @@ public class DisplayData : MonoBehaviour
         GUILayout.Label("Attention1:" + attention1);
         GUILayout.Label("Meditation1:" + meditation1);
 		GUILayout.Label("Delta:" + delta);
-        GUILayout.Label("theta:" + theta);
-        GUILayout.Label("HighAlpha:" + highAlpha);
-        GUILayout.Label("LowAlpha:" + lowAlpha);
 
     }
 }
