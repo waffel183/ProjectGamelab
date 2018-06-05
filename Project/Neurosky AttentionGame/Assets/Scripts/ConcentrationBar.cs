@@ -25,6 +25,5 @@ public class ConcentrationBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Bar.fillAmount = _attention/100.0f;
-        Debug.Log(Bar.fillAmount);
 	}
 }
