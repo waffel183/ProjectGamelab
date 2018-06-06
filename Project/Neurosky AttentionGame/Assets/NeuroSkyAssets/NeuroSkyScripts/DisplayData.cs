@@ -10,10 +10,7 @@ public class DisplayData : MonoBehaviour
     TGCConnectionController controller;
 
     private int poorSignal1;
-    private int attention1;
-    private int meditation1;
-	
-	private float delta;
+    public float Attention;
 
     void Start()
     {
@@ -21,11 +18,8 @@ public class DisplayData : MonoBehaviour
 		controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
 		
 		controller.UpdatePoorSignalEvent += OnUpdatePoorSignal;
-		controller.UpdateAttentionEvent += OnUpdateAttention;
-		controller.UpdateMeditationEvent += OnUpdateMeditation;
-		
-		controller.UpdateDeltaEvent += OnUpdateDelta;
-		
+        controller.UpdateAttentionEvent += OnUpdateAttention;
+
     }
 	
 	void OnUpdatePoorSignal(int value){
@@ -42,19 +36,15 @@ public class DisplayData : MonoBehaviour
       		indexSignalIcons = 1;
 		}
 	}
-	void OnUpdateAttention(int value){
-		attention1 = value;
-	}
-	void OnUpdateMeditation(int value){
-		meditation1 = value;
-	}
-	void OnUpdateDelta(float value){
-		delta = value;
-	}
+    void OnUpdateAttention(int value)
+    {
+        Attention = value * 1.0f;
+    }
 
 
     void OnGUI()
     {
+        
 		GUILayout.BeginHorizontal();
 		
 		
@@ -72,12 +62,6 @@ public class DisplayData : MonoBehaviour
 		GUILayout.Label(signalIcons[indexSignalIcons]);
 		
 		GUILayout.EndHorizontal();
-
-		
-        GUILayout.Label("PoorSignal1:" + poorSignal1);
-        GUILayout.Label("Attention1:" + attention1);
-        GUILayout.Label("Meditation1:" + meditation1);
-		GUILayout.Label("Delta:" + delta);
-
+        
     }
 }
