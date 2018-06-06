@@ -51,7 +51,7 @@ public class TGCConnectionController : MonoBehaviour {
 		    byte[] myWriteBuffer = Encoding.ASCII.GetBytes(@"{""enableRawOutput"": true, ""format"": ""Json""}");
 		    stream.Write(myWriteBuffer, 0, myWriteBuffer.Length);
 			
-			InvokeRepeating("ParseData",0.1f,0.02f);
+			InvokeRepeating("ParseData",1.0f,0.8f);
 		}
 	}
 	
@@ -72,13 +72,13 @@ public class TGCConnectionController : MonoBehaviour {
 						
 				if(UpdatePoorSignalEvent != null){
 				   UpdatePoorSignalEvent(int.Parse(primary["poorSignalLevel"].ToString()));
-				   }
+                   }
 						
 	            if(primary.Contains("eSense")){
 	              IDictionary eSense = (IDictionary)primary["eSense"];
 				  if(UpdateAttentionEvent != null){
 					 UpdateAttentionEvent(int.Parse(eSense["attention"].ToString()));
-				   }		
+                   }		
 				  if(UpdateMeditationEvent != null){
 					 UpdateMeditationEvent(int.Parse(eSense["meditation"].ToString()));
 				   }
@@ -123,7 +123,7 @@ public class TGCConnectionController : MonoBehaviour {
 	      }
 	      catch(IOException e){ Debug.Log("IOException " + e); }
 	      catch(System.Exception e){ Debug.Log("Exception " + e); }
-	    }		
+	    }
 		
 	}// end ParseData
 	
