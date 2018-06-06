@@ -390,9 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballPrefab: {fileID: 1144801165762964, guid: 89cde3b9156ad9047ac7982aeb89464d,
     type: 2}
-  _startPosRel: 5
-  startTime: 0
-  endTime: 0
+  _radius: 3
 --- !u!4 &1402121372
 Transform:
   m_ObjectHideFlags: 0
