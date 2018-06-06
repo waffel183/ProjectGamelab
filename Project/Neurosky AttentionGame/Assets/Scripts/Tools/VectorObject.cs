@@ -43,9 +43,7 @@ public class VectorObject : MonoBehaviour
         {
             _pos = value;
             this.R = Mathf.Sqrt(Mathf.Pow(value.x, 2) + Mathf.Pow(value.y, 2));
-            Debug.Log("Angle before Pos set" + this.Angle);
             this.Angle = Mathf.Atan2(value.y, value.x);
-            Debug.Log("Angle after Pos set" + this.Angle);
         }
     }
 

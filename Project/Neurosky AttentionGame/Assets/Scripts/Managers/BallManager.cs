@@ -21,6 +21,12 @@ public class BallManager : MonoBehaviour {
     public float startTime;
     public float endTime;
 
+    private Vector2 _centre;
+    private float _angle;
+    private float _radius;
+
+    Vector2 offset;
+
     void Start () {
         _controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
         //_data = GameObject.Find("Main Camera").GetComponent<DisplayData>();
@@ -30,6 +36,9 @@ public class BallManager : MonoBehaviour {
         _middleBall = Instantiate(_ballPrefab);
         _middleBallScript = _middleBall.GetComponent<Ball>();
         _middleBallScript.Setup(new Point(0, 0, 10, _middleBall.transform), new Vector2(0, 0), new Vector2(0, 0), new Vector2(0, 0));
+        _middleBallScript.Updator();
+
+        _centre = _middleBallScript.Point.transform.position;
 
         _ball = Instantiate(_ballPrefab);
         _ballScript = _ball.GetComponent<Ball>();
@@ -39,11 +48,10 @@ public class BallManager : MonoBehaviour {
         _ballPosRel = _ball.GetComponent<VectorObject>();
         _ballPosRel.Setup(new Point(200, 200, 10, _ball.transform), new Vector2(_startPosRel, 0), new Vector2(0, 0), new Vector2(0, 0));
         _ballPosRel.Updator();
-        _ballScript.DAngle = 0.02f;
+        _ballScript.DAngle = 1.5f;
 	}
 
     void Update () {
-        _middleBallScript.Updator();
 
         /*
         if (_data.Attention > 0)
@@ -53,16 +61,18 @@ public class BallManager : MonoBehaviour {
             _ballPosRel.Pos = new Vector2(_concentrationRelative, 0);
         }
         */
-
+        _angle += _ballScript.DAngle * Time.deltaTime;
         if (_concentrationBar.attention > 0)
-        {  
+        {
             _attention = _concentrationBar.attention * 1.0f;
-            _concentrationRelative = _startPosRel / (_attention / 100);
-            _ballPosRel.Pos = new Vector2(_concentrationRelative, 0);       //this line resets the Angle to 0
+            _radius = _startPosRel / (_attention / 100);
+            offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * _radius;
         }
-
-        _ballPosRel.Angle += _ballScript.DAngle;
-        _ballScript.SumVector(_middleBallScript.Pos, _ballPosRel.Pos, _ballScript.Pos);
-        _ballScript.Updator();
+        else
+        {
+            offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * _startPosRel;
+        }
+        _ballScript.Point.transform.position = _centre + offset;
+    
     }
 }
