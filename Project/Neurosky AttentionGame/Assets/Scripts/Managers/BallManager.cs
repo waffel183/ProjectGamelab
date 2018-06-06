@@ -82,4 +82,12 @@ public class BallManager : MonoBehaviour {
         
 
     }
+
+    public void ResetProgram()
+    {
+        _haveStartAttention = false;
+        _startAttention = 0;
+        offset = new Vector2(0, 0);
+        _angle = 0;
+    }
 }
