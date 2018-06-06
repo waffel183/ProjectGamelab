@@ -46,7 +46,6 @@ public class BallManager : MonoBehaviour {
         _ballPosRel.Angle += _ballScript.DAngle;
 
         _concentrationRelative = _startPosRel / (_attention / 100);
-        Debug.Log("after assignment: " + _concentrationRelative);
 
         _ballPosRel.Pos = new Vector2(_concentrationRelative,0);
 
