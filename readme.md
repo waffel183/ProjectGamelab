@@ -13,4 +13,4 @@ ConcentratieTraining voor kinderen met ADD/ADHD
 * [Onderzoek](https://docs.google.com/document/d/1ejvE5fU9pTGTJxef6B9A7nHFR8HJTO9HdM292ULGLHI/edit)
 * [Ontwerp]()
 * [Testrapportage]()
-* [Presentatie](https://docs.google.com/presentation/d/1HsFpMFQUDOmGNi7cDW7dLdvjBdlc3bttly2gyVHI_pU/edit#slide=id.p1)
+* [Presentatie](https://docs.google.com/presentation/d/1C3sA-bAPPJ3DWGxfG2kBRZa-ZaKWyTvPcxn4nyKMyws/edit#slide=id.g3c51b58370_0_0)

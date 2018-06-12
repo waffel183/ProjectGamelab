@@ -27,8 +27,8 @@ public class BallManager : MonoBehaviour {
 
     void Start () {
         _controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
-        //_data = GameObject.Find("Main Camera").GetComponent<DisplayData>();
-        _concentrationBar = GameObject.Find("ConcentrationBarController").GetComponent<ConcentrationBar>();
+        _data = GameObject.Find("Main Camera").GetComponent<DisplayData>();
+        //_concentrationBar = GameObject.Find("ConcentrationBarController").GetComponent<ConcentrationBar>();
 
 
         _middleBall = Instantiate(_ballPrefab);
@@ -47,20 +47,21 @@ public class BallManager : MonoBehaviour {
 
     void Update () {
         _angle += _ballScript.DAngle * Time.deltaTime;
-        /*
+        
         if (_data.Attention > 0)
         {
             if (!_haveStartAttention)
             {
-                _startAttention = _concentrationBar.attention * 1.0f;
+                _startAttention = _data.Attention * 1.0f;
                 _haveStartAttention = true;
             }
-            _currentAttention = _concentrationBar.attention * 1.0f;
+            _currentAttention = _data.Attention * 1.0f;
             _attentionPercentage = _currentAttention / _startAttention * 100;
             _radius = _startRadius / (_attentionPercentage / 100);
             offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * _radius;
         }
-        */
+
+        /*
         if (_concentrationBar.attention > 0)
         {
             if (!_haveStartAttention)
@@ -73,6 +74,7 @@ public class BallManager : MonoBehaviour {
             _radius = _startRadius / (_attentionPercentage / 100);
             offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * _radius;
         }
+        */
 
         else
         {

@@ -51,7 +51,7 @@ public class TGCConnectionController : MonoBehaviour {
 		    byte[] myWriteBuffer = Encoding.ASCII.GetBytes(@"{""enableRawOutput"": true, ""format"": ""Json""}");
 		    stream.Write(myWriteBuffer, 0, myWriteBuffer.Length);
 			
-			InvokeRepeating("ParseData",1.0f,0.8f);
+			InvokeRepeating("ParseData",1.0f,0.008f);
 		}
 	}
 	
@@ -78,12 +78,14 @@ public class TGCConnectionController : MonoBehaviour {
 	              IDictionary eSense = (IDictionary)primary["eSense"];
 				  if(UpdateAttentionEvent != null){
 					 UpdateAttentionEvent(int.Parse(eSense["attention"].ToString()));
-                   }		
+                   }
+                  /*
 				  if(UpdateMeditationEvent != null){
 					 UpdateMeditationEvent(int.Parse(eSense["meditation"].ToString()));
 				   }
+                   */
 	            }
-	
+	            /*
 	            if(primary.Contains("eegPower")){
 	              IDictionary eegPowers = (IDictionary)primary["eegPower"];
 								
@@ -112,13 +114,16 @@ public class TGCConnectionController : MonoBehaviour {
 					 UpdateHighGammaEvent(float.Parse(eegPowers["highGamma"].ToString()));
 					}
 	            }
+                */
 	          }
 	          else if(primary.Contains("rawEeg") && UpdateRawdataEvent != null){
 					  UpdateRawdataEvent(int.Parse(primary["rawEeg"].ToString()));
 	          }
+              /*
 	          else if(primary.Contains("blinkStrength") && UpdateBlinkEvent != null){
 					  UpdateBlinkEvent(int.Parse(primary["blinkStrength"].ToString()));
 	          }
+              */
 	        }
 	      }
 	      catch(IOException e){ Debug.Log("IOException " + e); }

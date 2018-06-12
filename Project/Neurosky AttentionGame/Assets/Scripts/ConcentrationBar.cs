@@ -9,17 +9,17 @@ public class ConcentrationBar : MonoBehaviour {
 
     TGCConnectionController controller;
     DisplayData Data;
-    public int attention;
+    //public int attention;
 
 	// Use this for initialization
 	void Start () {
         controller = GameObject.Find("NeuroSkyTGCController").GetComponent<TGCConnectionController>();
-        //Data = GameObject.Find("Main Camera").GetComponent<DisplayData>();
+        Data = GameObject.Find("Main Camera").GetComponent<DisplayData>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //Bar.fillAmount = Data.Attention/100.0f;
-        Bar.fillAmount = attention / 100.0f;
+        Bar.fillAmount = Data.Attention/100.0f;
+        //Bar.fillAmount = attention / 100.0f;
     }
 }
