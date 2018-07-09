@@ -17,6 +17,6 @@ Als je concentratie minder wordt, dan gaat de bal verder weg, zo kan je zien dat
 [Documentatie](https://drive.google.com/drive/folders/1ymS05ewlgOqPIAre67sbDHHo1Ius3fAg)
 
 * [Onderzoek](https://docs.google.com/document/d/1ejvE5fU9pTGTJxef6B9A7nHFR8HJTO9HdM292ULGLHI/edit)
-* [Ontwerp]()
+* [Ontwerp](https://docs.google.com/document/d/1NmXto0ykB7ykV_vtA3Fc6qh1tBE29PpEra3ZrUAakQw/edit?usp=sharing)
 * [Testrapportage](https://drive.google.com/open?id=1QvrDAnbURSoWo6xngHTTn4OuIF_Qzcueq8H7lc2C3dA)
 * [Presentatie](https://docs.google.com/presentation/d/1C3sA-bAPPJ3DWGxfG2kBRZa-ZaKWyTvPcxn4nyKMyws/edit#slide=id.g3c51b58370_0_0)
